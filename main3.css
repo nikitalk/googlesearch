@@ -1,0 +1,120 @@
+#button {
+display: grid;
+  background: #4285f4;
+  min-height: 50px;
+  width: 200px;
+  align-items: end;
+  justify-content: center;
+   border-radius: 50px;
+
+
+}
+
+#voice {
+  display: grid;
+
+    min-height: 50px;
+    align-items: end;
+    justify-content: center;
+   background: #34a853;
+ width: 50px;
+
+     border-radius: 50px;
+  }
+
+#button:hover {
+  background: #ea4335;
+  cursor: pointer;
+}
+
+#voice:hover {
+  background: #fbbc05;
+    cursor: pointer;
+}
+
+body {
+overflow: hidden;
+}
+
+#container {
+  display: grid;
+  text-align:center;
+  min-height: 100vh;
+  align-items: center;
+  }
+
+#button img {
+  height: 30px;
+  margin-bottom: 7px;
+
+}
+
+#voice img {
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+#input {
+
+  height: 50px;
+ width: 10px;
+border:2px solid #fbbc05;
+height: 44px;
+ outline:none;
+ margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+ line-height: 40px;
+ font-size: 25px;
+ color: #ea4335;
+ max-width:500px;
+border-radius: 50px;
+
+ 
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fbbc05;
+  opacity: 1; /* Firefox */
+ 
+  
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 50px;
+  align-self: center;
+  justify-self: center;
+
+  background-color: #fff;
+   border-radius: 50px;
+      margin-top:-200px;
+ 
+}
+
+#grid2 {
+ 
+ 
+}
+
+#hide {
+	
+	 position: absolute;
+  top: -1000px;
+  left: -1000px;
+  visibility: hidden;
+  white-space: nowrap;
+   font-size: 25px;
+   font-family: Arial;
+}
+
+.anim {
+	transition: width 1.5s;
+}
+
+.anim2 {
+ min-width: 220px;
+}
