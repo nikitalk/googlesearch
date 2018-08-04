@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google</title>
+    <link href="main4.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div id="container">
+    	     
+      <div id="grid">
+        <div id="voice"><img src="voice2.png"></div>
+        <div id="grid2"> 
+    <input id="input"  type=text placeholder='Type text here, and ' />
+</div>
+    <div id="button"><img src="button4.png"></div>
+</div>
+
+    </div>
+      <span id="hide"></span>
+
+<!--   <script src="stretchy.js" async></script> -->
+
+   <script>
+     
+     document.querySelector("#button").addEventListener("click", () => {
+      window.open(`https://www.google.com/search?q=${document.querySelector("#input").value}`,"_self")
+
+
+
+          })
+                    function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+           var transitionEvent = whichTransitionEvent();
+            console.log(transitionEvent)
+      document.querySelector("#input").addEventListener(transitionEvent, () => {
+                   //  document.querySelector("#input").removeEventListener(transitionEvent);
+                    //  document.querySelector("#input").classList.remove("anim");
+                    //  document.querySelector("#input").classList.add("anim2");
+
+      });
+
+      let element =     document.querySelector("#input");
+      window.addEventListener("load", function(){
+var width = element.scrollWidth - element.clientWidth;
+                                if (element.value.length == 0) width=220;
+                              // if (element.value.length == 1) width=25;
+				element.style.width = width + "px";
+
+
+});
+
+var box = document.getElementById('input');
+var animation = box.animate([{ width: "10px" }, { width: "220px" }], 1000);
+
+function finishedHandler() { 
+  console.log('animation finished: ' + Date.now());
+}
+function canceledHandler() { 
+  console.log('animation canceled: ' + Date.now());
+}
+
+//the Promise version, log the timestamp when the Animation finishes
+animation.finished.then(finishedHandler, canceledHandler);
+
+//the effective successful equivalent with the onfinish callback
+animation.onfinish = finishedHandler;
+
+
+
+var hide = document.getElementById('hide');
+var txt = document.getElementById('input');
+
+txt.addEventListener("input", function(event){
+          hide.textContent = txt.value;
+        if (txt.value.length == 0) {
+       //   document.querySelector("#input").classList.add("anim");
+       txt.animate([{ width: "10px" }, { width: "220px" }], 1000);
+          txt.style.width="220px";
+      } else {
+  txt.animate([{ width: hide.offsetWidth + "px" }], 1000);
+          txt.style.width = hide.offsetWidth + "px";
+         
+          }
+
+//if (txt.value.length == 2) document.querySelector("#input").classList.remove("anim"); 
+        })
+
+   </script>
+  </body>
+
+</html>

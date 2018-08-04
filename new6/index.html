@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google</title>
+    <link href="main3.css" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+    <div id="container">
+    	     
+      <div id="grid">
+        <img src="glogo.svg" width=50>
+        <div id="grid2"> 
+    <input id="input"  type=text placeholder="Type here what you want to find, and" class="anim"/>
+                        <label>Type here what you want to find, and </label>
+</div>
+    <div id="button" ><img src="google-logo3.svg"></div>
+</div>
+            <div id="voice" ><img src="Google_mic.svg" width=17></div>
+    </div>
+      <span id="hide"></span>
+
+<!--   <script src="stretchy.js" async></script> -->
+
+   <script>
+     
+     document.querySelector("#button").addEventListener("click", () => {
+      window.open(`https://www.google.com/search?q=${document.querySelector("#input").value}`,"_self")
+
+
+
+          })
+                    function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+           var transitionEvent = whichTransitionEvent();
+            console.log(transitionEvent)
+      document.querySelector("#input").addEventListener(transitionEvent, () => {
+                   //  document.querySelector("#input").removeEventListener(transitionEvent);
+                    //  document.querySelector("#input").classList.remove("anim");
+                      document.querySelector("#input").classList.add("anim2");
+
+      });
+
+      let element =     document.querySelector("#input");
+      window.addEventListener("load", function(){
+var width = element.scrollWidth - element.clientWidth;
+                                if (element.value.length == 0) width=330;
+                              // if (element.value.length == 1) width=25;
+				element.style.width = width + "px";
+
+
+});
+
+  document.querySelector("input").classList.add("inputshadow"); 
+
+var hide = document.getElementById('hide');
+var txt = document.getElementById('input');
+//txt.focus();
+
+txt.addEventListener("input", function(event){
+
+  document.querySelector("label").classList.add("gooo");
+   document.querySelector("input").classList.add("inputshadowon"); 
+  document.querySelector("label").style.visibility="visible";
+  document.querySelector("input").placeholder=""; 
+          hide.textContent = txt.value;
+        if (txt.value.length == 0) {
+          document.querySelector("#input").classList.add("anim");
+          document.querySelector("label").classList.remove("gooo"); 
+             document.querySelector("input").classList.remove("inputshadowon"); 
+
+          txt.style.width="330px";
+      } else {
+
+          //txt.style.width = hide.offsetWidth+7 + "px";
+         
+          }
+
+if (txt.value.length == 3) document.querySelector("#input").classList.remove("anim"); 
+        })
+
+function bigImg(x) {
+    x.src = "google-logo2.svg";
+    
+}
+
+function normalImg(x) {
+   x.src = "google-logo3.svg";
+}
+
+function bigImg2(x) {
+    x.src = "Google_mic2.svg";
+    
+}
+
+function normalImg2(x) {
+   x.src = "Google_mic.svg";
+}
+   </script>
+  </body>
+
+</html>
